@@ -31,28 +31,24 @@ PaySecure is a real-time fraud detection and risk monitoring system built using 
 
 ---
 
-## 📁 Project Structure
-PaySecure/
+📦 PaySecure/
 ├── api/
-│ ├── main.py
-│ ├── schema.py
-│ ├── feature_order.json
-│ └── models/
-│ ├── Random_Forest_Model.pkl
-│ └── Robust_Scaler.pkl
-│
+│   ├── main.py
+│   ├── schema.py
+│   ├── feature_order.json
+│   └── models/
+│       ├── Random_Forest_Model.pkl
+│       └── Robust_Scaler.pkl
 ├── dashboard/
-│ └── app.py
-│
+│   └── app.py
 ├── simulator/
-│ └── simulator.py
-│
+│   └── simulator.py
 ├── data/
-│ └── transactions_log.jsonl
-│
+│   └── transactions_log.jsonl
 ├── run_all.py
 ├── requirements.txt
 └── README.md
+
 
 
 ---
