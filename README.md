@@ -96,12 +96,6 @@ This will automatically:
    - 📊 **Risk Category Distribution**
    - 📈 **Frauds Over Time**
 
----
-
-## 📊 Screenshots
-
-> Add screenshots or a demo GIF here  
-> You can use [Loom](https://www.loom.com) or [Peek](https://github.com/phw/peek) to record a screen demo.
 
 ---
 
@@ -134,7 +128,5 @@ For real-world usage:
 
 ---
 
-## 📃 License
 
-This project is licensed under the [MIT License](LICENSE).
 
