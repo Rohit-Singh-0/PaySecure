@@ -152,10 +152,6 @@ The following figures are modeled projections based on the dataset, pipeline per
 - **Fraud base rate**: 0.173% (from the benchmark European credit card dataset: 492/284,807).
 - **Annual transactions**: ~31.5M (86,400×365).
 
-## Notes for Stakeholders
-- Validate with controlled pilots (A/B or phased rollout) using production metrics: precision/recall at operating threshold, false-positive rates, review queue volume, AHT, approval/friction impact, realized loss avoidance.
-- For auditability, pair projections with governance artifacts: threshold rationale, drift monitoring plan, DQ checks, lineage and change logs before using in financial planning.
-
 ## 🔍 Advanced Analytics \& Reports
 
 ### **Jupyter Notebook Analysis**
