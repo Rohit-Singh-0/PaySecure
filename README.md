@@ -148,9 +148,39 @@ The following figures are modeled projections based on the dataset, pipeline per
 - **ROI**: **518,352%**
 
 ### Assumptions Used:
-- **Daily transaction volume**: ~86,400 transactions/day (≈1.65 tx/s) extrapolated to a 365-day year.
-- **Fraud base rate**: 0.173% (from the benchmark European credit card dataset: 492/284,807).
-- **Annual transactions**: ~31.5M (86,400×365).
+- Volume and base rates
+    - Daily transaction volume: ~86,400 transactions/day (≈1.65 tx/s), extrapolated to a 365-day year (~31.5M transactions/year).
+    - Fraud base rate: 0.173% (492 frauds out of 284,807 transactions from the benchmark European credit card dataset).
+    - Annual transactions used in projections: ~31,536,000 (86,400×365).
+- Model training and evaluation setup
+    - Class imbalance handled with SMOTE during training to create a balanced training set.
+    - Reported AUC (≈99.97%) is from balanced evaluation; production precision/recall will differ under true class imbalance.
+    - A single operating threshold maps predicted probabilities to actions and risk tiers.
+- Risk tiers to business actions (operational policy)
+    - Low risk: auto-approve.
+    - Medium risk: step-up verification; only a defined fraction routed to manual review.
+    - High/Critical risk: block/hold (counted as prevented fraud if truly fraudulent) and routed to manual review.
+    - Prevented fraud dollars are counted only for truly fraudulent transactions blocked/held at/above the threshold.
+- Financial parameters (fixed scalars in the notebook)
+    - Average loss per fraudulent transaction: fixed value defined in the notebook (used to convert prevented fraud counts to dollars).
+    - Investigation unit cost: fixed per-case cost applied to all manually reviewed transactions.
+    - Customer churn cost: fixed penalty per impacted legitimate transaction (false positive/challenged), multiplied by annual FP impact count.
+- False positive and review workload assumptions
+    - Annual manual reviews are derived from the number of flagged transactions by tier and the assumed review rates.
+    - Customer churn cost is computed from the subset of legitimate transactions affected by controls and the per-event penalty.
+- Latency, reliability, and scope
+    - Assumes real-time decisioning meets SLA (no penalties modeled for delays/queues/fallbacks).
+    - Recovery/chargebacks are not modeled; prevented fraud assumes timely block/hold.
+    - Dataset-to-production generalization: the benchmark dataset’s fraud rate/patterns are used as a proxy; seasonal shifts, merchant mix differences, and adversarial drift are not modeled.
+- Aggregation formulas (annual results)
+    - Annual_fraud_prevented = (annual count of truly fraudulent transactions detected and blocked/held) × (average loss per fraud).
+    - Annual_investigation_costs = (annual manual review count) × (investigation unit cost).
+    - Customer_churn_cost = (annual impacted legitimate transaction count) × (per-event churn penalty).
+    - Net_annual_savings = Annual_fraud_prevented − Annual_investigation_costs − Customer_churn_cost.
+    - ROI% = (Net_annual_savings ÷ annual program/operational cost baseline) × 100.
+- Notes on interpretation
+    - All dollar impacts are modeled projections based on the above parameters and operating policy; they are not realized savings without production validation.
+    - Results are sensitive to average loss per fraud, operating threshold (precision/recall trade-off), review rates, and daily volume; moderate changes in these inputs can materially alter prevention, costs, and ROI.
 
 ## 🔍 Advanced Analytics \& Reports
 
