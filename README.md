@@ -148,7 +148,6 @@ The following figures are modeled projections based on the dataset, pipeline per
 - **ROI**: **518,352%**
 
 ### Assumptions Used:
-**Volume and Base Rates**
 - **Daily transaction volume**: ~86,400 transactions/day (≈1.65 tx/s) extrapolated to a 365-day year.
 - **Fraud base rate**: 0.173% (from the benchmark European credit card dataset: 492/284,807).
 - **Annual transactions**: ~31.5M (86,400×365).
