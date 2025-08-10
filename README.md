@@ -141,12 +141,21 @@ Critical Risk (70-100%) → Immediate review/block
 | **Accuracy** | **99%** | 98% |
 
 ### **Financial Impact Analysis**
-
+The following figures are modeled projections based on the dataset, pipeline performance, and business assumptions used in the accompanying Jupyter Notebook. They are intended for scenario planning and should not be interpreted as realized savings without production validation.
 - **Annual Fraud Prevented**: \$3,075,307,500
 - **Investigation Costs**: \$593,125
 - **Net Annual Savings**: \$3,074,477,125
 - **ROI**: **518,352%**
 
+### Assumptions Used:
+**Volume and Base Rates**
+- **Daily transaction volume**: ~86,400 transactions/day (≈1.65 tx/s) extrapolated to a 365-day year.
+- **Fraud base rate**: 0.173% (from the benchmark European credit card dataset: 492/284,807).
+- **Annual transactions**: ~31.5M (86,400×365).
+
+## Notes for Stakeholders
+- Validate with controlled pilots (A/B or phased rollout) using production metrics: precision/recall at operating threshold, false-positive rates, review queue volume, AHT, approval/friction impact, realized loss avoidance.
+- For auditability, pair projections with governance artifacts: threshold rationale, drift monitoring plan, DQ checks, lineage and change logs before using in financial planning.
 
 ## 🔍 Advanced Analytics \& Reports
 
