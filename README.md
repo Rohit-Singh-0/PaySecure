@@ -23,7 +23,7 @@
 | **Data Processing** | Pandas, NumPy, RobustScaler |
 | **Deployment** | Docker, Joblib |
 | **Analytics** | Jupyter Notebooks, LaTeX Reports |
-| **Visualization** | Tableau Dashboard, Seaborn |
+| **Visualization** | Seaborn |
 
 ## 📂 Project Structure
 
@@ -51,10 +51,8 @@ PaySecure/
 ├── 📋 reports/                      # Business Intelligence
 │   ├── CreditCardFraudAnalysisReport.pdf
 │   ├── Latex/                      # LaTeX analysis reports
-│   │   ├── Fraud_Analysis_Notebook.tex
-│   │   └── *.png                   # Analysis visualizations
-│   └── Tableau Dashboard/
-│       └── Credit Card Fraud Analysis Dashboard.twb
+│       ├── Fraud_Analysis_Notebook.tex
+│       └── *.png                   # Analysis visualizations   
 ├── 🐳 Dockerfile                   # Container configuration
 ├── ⚙️ run_all.py                   # One-click startup script
 ├── 📋 requirements.txt             # Python dependencies
@@ -194,7 +192,6 @@ The following figures are modeled projections based on the dataset, pipeline per
 ### **Business Reports**
 
 - **📄 PDF Report**: Comprehensive fraud analysis findings
-- **📊 Tableau Dashboard**: Interactive business intelligence
 - **📝 LaTeX Documentation**: Academic-quality analysis documentation
 
 
