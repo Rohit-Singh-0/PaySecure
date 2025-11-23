@@ -1,6 +1,6 @@
 # 💳 PaySecure – Real-Time Credit Card Fraud Detection \& Analytics Platform
 
-**PaySecure** is a comprehensive, production-ready fraud detection system that combines **real-time machine learning**, **interactive dashboards**, and **business intelligence analytics**. Built with **FastAPI**, **Streamlit**, and **advanced ML models**, it delivers enterprise-grade fraud detection with 99.97% AUC performance.
+**PaySecure** is a comprehensive end-to-end fraud detection system that combines **real-time machine learning**, **interactive dashboards**, and **business intelligence analytics**. Built with **FastAPI**, **Streamlit**, and **advanced ML models**, it delivers enterprise-grade fraud detection with 99.97% AUC performance.
 
 ## 🚀 Key Features \& Performance
 
